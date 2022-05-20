@@ -37,9 +37,9 @@ function renderProducts(productsList) {
 function addSearchLookahead() {
   search.onkeyup = function () {
     const searchValue = event.target.value.trim().toLowercase();
-    console.log(search);
-    const filteredProducts = products.filter(function (product) {
-      if (product.title.toLowerCase().startsWith(searchValue)) {
+
+    const filteredProducts = products.data.filter(function (product) {
+      if (product.attributes.title.toLowerCase().includes(searchValue)) {
         return true;
       }
     });
